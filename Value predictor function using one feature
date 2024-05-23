@@ -1,0 +1,14 @@
+def predict_house_values(n, feature, label):
+
+
+  batch = training_df[feature][10000:10000 + n]
+  predicted_values = my_model.predict_on_batch(x=batch)
+
+  print("feature   label          predicted")
+  print("  value   value          value")
+  print("          in thousand$   in thousand$")
+  print("--------------------------------------")
+  for i in range(n):
+    print ("%5.0f %6.0f %15.0f" % (training_df[feature][10000 + i],
+                                   training_df[label][10000 + i],
+                                   predicted_values[i][0] ))
